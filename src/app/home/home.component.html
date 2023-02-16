@@ -1,0 +1,49 @@
+<!--
+
+<div class="container mt-5"  style="background-color: aquamarine; border-radius: 5px;padding:20px;">
+  <form action="" [formGroup]="regForm ">
+    UserName:-<input type="text" class="form-control w-50 m-3" formControlName="uname">
+    <div *ngIf="regForm.get('uname')?.touched&&regForm.get('uname')?.hasError('required')">UserName is Required</div>
+    <div *ngIf="regForm.get('uname')?.touched&&regForm.get('uname')?.hasError('minlength')">UserName is minlength 8 Characters</div>
+
+    Password:-<input type="text" class="form-control w-50 m-3" formControlName='password'>
+    <div *ngIf="regForm.get('password')?.touched&&regForm.get('password')?.hasError('required')">Password is Required</div>
+    <div *ngIf="regForm.get('password')?.touched&&regForm.get('password')?.hasError('minlength')">password is minlength 5 Characters</div>
+
+    <button class="btn btn-primary" (click)="submit()">Submit</button>
+    <button class="btn btn-danger mx-2" (click)="reset()"> Reset</button>
+
+  </form>
+  </div> -->
+
+
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form class="login" [formGroup]="regForm ">
+          <div class="login__field">
+            <input type="text" class="login__input" placeholder="User name / Email" formControlName="uname">
+            <div class="valid" *ngIf="regForm.get('uname')?.touched&&regForm.get('uname')?.hasError('required')">UserName is Required</div>
+           <div class="valid" *ngIf="regForm.get('uname')?.touched&&regForm.get('uname')?.hasError('minlength')">UserName is minlength 5 Characters</div>
+          </div>
+          <div class="login__field">
+            <input type="password" class="login__input" placeholder="Password" formControlName='password'>
+            <div class="valid" *ngIf="regForm.get('password')?.touched&&regForm.get('password')?.hasError('required')">Password is Required</div>
+            <div class="valid" *ngIf="regForm.get('password')?.touched&&regForm.get('password')?.hasError('minlength')">password is minlength 3 Characters</div>
+          </div>
+          <button class="button login__submit">
+            <span class="button__text"(click)="submit()">Log In Now</span>
+          </button>
+          <button class="button login__submit">
+            <span class="button__text"(click)="reset()">Reset</span>
+          </button>
+        </form>
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>

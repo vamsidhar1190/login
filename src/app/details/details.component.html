@@ -1,0 +1,109 @@
+<!-- As a link -->
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-brown navbar">
+  <span class="navbar-brand mb-0 h1 ">Navbar</span>
+  <div>
+    <button class="btn btn-danger mx-5" (click)="logout()"> Logout</button>
+  </div>
+</nav>
+
+<div *ngIf="display">
+  <a routerLink="/details/employess" routerLinkActive="active">Employes</a><br>
+  <a routerLink="/details/owners" routerLinkActive="active">Owners</a>
+  <router-outlet></router-outlet>
+</div>
+
+
+
+<div *ngIf="datas" (click)="nodata()">
+<div class="container" >
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of Users,">
+      <button class="btn btn-wr, text-primary"><th (click)="openPopup(data)">{{data.id}}</th></button>
+      <td (click)="showdata()">{{data.name}}</td>
+      <td>{{data.username}}</td>
+      <td>{{data.email}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- <div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Employees Data</h4>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="data">
+            <th>{{data.id}}</th>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+           <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+  <footer class="text-center text-lg-start" style="background-color: #db6930;">
+    <div class="container d-flex justify-content-center py-5">
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <i class="fab fa-youtube"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <i class="fab fa-instagram"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+        <i class="fab fa-twitter"></i>
+      </button>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>
+
+
+<!-- End of .container -->
+
