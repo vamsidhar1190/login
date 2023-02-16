@@ -69,7 +69,4 @@ export class DetailsComponent {
   hide(){
     this.links=true
   }
-
-
-
 }
